@@ -1,0 +1,7 @@
+### ignore ###
+/*
+./**
+
+
+### not ignore (Describe the file you want to track)###
+!.zshrc
