@@ -40,14 +40,7 @@ function main(){
 	else
 		echo "already exists zsh."
 	fi
-	echo "$bash"
-	# change Shell Bash -> zsh
-	if [[ "$bash" = true ]]; then
-		echo "Default Login Shell: Bash"
-	else
-		chsh -s /usr/bin/zsh
-		echo "Change Login Shell: Zsh"
-	fi
+	
 }
 
 main "$@"
