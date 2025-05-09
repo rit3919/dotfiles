@@ -5,7 +5,7 @@
 
 ### not ignore (Describe the file you want to track)###
 !.zshrc
-!/.bin/
-!/.bin/**
-!/.config/
-!/.config/**
+!/bin/
+!/bin/**
+!/etc/
+!/etc/**
