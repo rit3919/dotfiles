@@ -8,6 +8,12 @@ Usage: install.sh <options>...
 Options:
 --bash: no change login shell to zsh.
 
+-i | --init: Install Default Settings.
+
+-u | --update: Update pacman.
+
+
+
 --help: how to use.
 
 EOF
@@ -17,7 +23,10 @@ function main(){
 
 	# bashFlag
 	local bash="false"
-	local noupdate="false"
+	# update_flag
+	local is_update="false"
+	# pacman -S installFlag.
+	local is_pkg_install="false"
 
 	while [ "$#" -gt 0 ]; do
 		case "$1" in
@@ -25,8 +34,11 @@ function main(){
 				usage;exit 0;;
 			--bash)
 				bash="true";;
-			-u|--no-update)
-				noupdate="true";;
+			-u|--update)
+				is_update="true"
+			-i|--init)
+				is_update="true"
+				is_pkg_install="true";;
 			
 			*)
 				;;
@@ -35,9 +47,22 @@ function main(){
 	done
 	
 	# update pacman
-	if [ "$noupdate" = false ]; then
+	if [ "$is_update" = true ]; then
 		sudo pacman -Syu --noconfirm
-	fi	
+
+		if [ "$is_pkg_install" = true ]; then
+			sudo pacman -S --needed --noconfirm - < ../etc/package.list
+		else
+			read -p "Do you want to install a package from the package.list? (y/N)" ans
+			case "$ans" in
+				[Yy]*)
+					sudo pacman -S --needed --noconfirm - < ../etc/package.list;;
+				"" | N*)
+					;;
+			esac
+		fi
+	fi
+
 
 	# check if zsh exists
 	if !(type "zsh" > /dev/null 2>&1); then
@@ -50,9 +75,6 @@ function main(){
 		echo "Default Login Shell: Bash"
 	else
 		chsh -s /bin/zsh $USER
-		if [ $? == "0" ]; then
-			echo "Change Login Shell"
-		fi
 	fi
 	
 }
