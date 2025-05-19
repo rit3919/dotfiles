@@ -35,7 +35,7 @@ function main(){
 			--bash)
 				bash="true";;
 			-u|--update)
-				is_update="true"
+				is_update="true";;
 			-i|--init)
 				is_update="true"
 				is_pkg_install="true";;
@@ -76,6 +76,8 @@ function main(){
 	else
 		chsh -s /bin/zsh $USER
 	fi
+
+
 	
 }
 
