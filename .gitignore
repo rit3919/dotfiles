@@ -14,3 +14,4 @@
 !/nvim/
 !/nvim/**
 /nvim/.gitignore
+/nvim/.git
