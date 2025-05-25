@@ -11,4 +11,7 @@
 !/config/**
 !/zsh/
 !/zsh/**
-
+!/nvim/
+!/nvim/**
+/nvim/.git
+/nvim/.gitignore
