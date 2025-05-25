@@ -7,8 +7,8 @@
 !.zshrc
 !/bin/
 !/bin/**
-!/etc/
-!/etc/**
+!/config/
+!/config/**
 !/zsh/
 !/zsh/**
 
