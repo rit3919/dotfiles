@@ -11,4 +11,5 @@
 !/config/**
 !/zsh/
 !/zsh/**
-
+!/nvim/
+!/nvim/**
