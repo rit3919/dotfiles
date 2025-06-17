@@ -7,3 +7,9 @@ My linux setup
 
 # Auto Install Package
 - less
+
+
+
+# memo
+
+WaylandのVSCodeの設定、/etc/environmentをバックアップに入れて、シンボリックリンクを貼る。
