@@ -4,4 +4,6 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
+
+# electron
 ELECTRON_OZONE_PLATFORM_HINT=wayland
