@@ -1,1 +1,0 @@
-# 💤 LazyVim Rit settings
