@@ -1,0 +1,3 @@
+[submodule "dotnvim"]
+	path = dotnvim
+	url = git@github.com:rit3919/dotnvim.git
